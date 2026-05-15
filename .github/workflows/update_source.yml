@@ -42,6 +42,7 @@ jobs:
       id: update_source
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        REPO_URL: ${{ github.repository }}
       run: |
         python .github/update_json.py
 

@@ -118,8 +118,9 @@ jobs:
           NIGHTLY_LINK: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/attempts/${{ github.run_attempt }}
           commit_sha: ${{ env.COMMIT_SHA }}
           commit_msg: ${{ env.COMMIT_MSG }}
+          REPO_URL: ${{ github.repository }}
         run: |
-          python .github/update_json.py
+          python .github/update_json.py ${{ github.repository }}
       - name: Nightly Release
         uses: andelf/nightly-release@5834076edc55cc05975561c9722043f072ac5c26
         env:
