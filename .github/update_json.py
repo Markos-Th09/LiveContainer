@@ -1,6 +1,7 @@
 import json
 import plistlib
 import re
+import sys
 import requests
 import os
 from datetime import datetime
@@ -328,7 +329,7 @@ Nightly build from [{commit_sha}](https://github.com/LiveContainer/LiveContainer
 
 
 def main():
-    repo_url = "LiveContainer/LiveContainer"
+    repo_url = sys.argv[1] if len(sys.argv) > 1 else "LiveContainer/LiveContainer"
     is_nightly = "NIGHTLY_LINK" in os.environ
 
     try:

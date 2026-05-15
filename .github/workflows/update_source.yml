@@ -43,7 +43,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        python .github/update_json.py
+        python .github/update_json.py ${{ github.repository }}
 
     - name: Update apps.json in Release 1.0
       uses: softprops/action-gh-release@v3
